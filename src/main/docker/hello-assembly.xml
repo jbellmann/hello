@@ -28,8 +28,6 @@
         <fileMode>0755</fileMode>
         <directory>spring-conf</directory>
         <includes>
-            <include>application-zonartooling.yaml</include>
-            <include>application-zonartooling-test.yaml</include>
             <include>application.yaml</include>
         </includes>
         <outputDirectory>/</outputDirectory>
