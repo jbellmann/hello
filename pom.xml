@@ -5,7 +5,7 @@
 
     <groupId>de.jbellmann</groupId>
     <artifactId>hello</artifactId>
-    <version>3-jb</version>
+    <version>4-jb</version>
     <packaging>jar</packaging>
 
     <name>hello</name>
@@ -107,7 +107,7 @@
                                         <maintainer>${docker-image-maintainer}</maintainer>
                                         <runCmds>
                                             <runCmd>groupadd -r siggi</runCmd>
-                                            <runCmd>useradd -r -g siggi siggi</runCmd>
+                                            <runCmd>useradd -m -g siggi siggi</runCmd>
                                         </runCmds>
                                         <user>siggi</user>
                                         <ports>
