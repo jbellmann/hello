@@ -5,7 +5,7 @@
 
     <groupId>de.jbellmann</groupId>
     <artifactId>hello</artifactId>
-    <version>1-jb-thinner</version>
+    <version>2-jb</version>
     <packaging>jar</packaging>
 
     <name>hello</name>
@@ -27,7 +27,8 @@
         <!-- DOCKER -->
         <docker-maven-plugin.version>0.23.0</docker-maven-plugin.version>
         <docker-image-name>sigmalab/hello</docker-image-name>
-        <docker-image-from>azul/zulu-openjdk-alpine:8u152</docker-image-from>
+        <!-- <docker-image-from>azul/zulu-openjdk-alpine:8u152</docker-image-from> -->
+        <docker-image-from>java:8</docker-image-from>
         <docker-image-maintainer>joerg.bellmann@googlemail.com</docker-image-maintainer>
     </properties>
 
