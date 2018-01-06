@@ -5,7 +5,7 @@ metadata:
   namespace: default
   labels:
     application: hello
-    version: "1-jb"
+    version: "3-jb"
 spec:
   replicas: 1
   selector:
@@ -15,11 +15,11 @@ spec:
     metadata:
       labels:
         application: hello
-        version: "1-jb"
+        version: "3-jb"
     spec:
       containers:
       - name: hello
-        image: sigmalab/hello:1-jb
+        image: sigmalab/hello:3-jb
         ports:
         - containerPort: 8080
           name: web
