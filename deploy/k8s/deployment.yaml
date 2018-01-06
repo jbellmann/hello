@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello
+  namespace: default
+  labels:
+    application: hello
+    version: "1-jb"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      application: hello
+  template:
+    metadata:
+      labels:
+        application: hello
+        version: "1-jb"
+    spec:
+      containers:
+      - name: hello
+        image: sigmalab/hello:1-jb
+        ports:
+        - containerPort: 8080
+          name: web
+        - containerPort: 7979
+          name: management
+        resources:
+          requests:
+            memory: 256Mi
+          limits:
+            memory: 256Mi
+        env:
+        - name: JAVA_OPTS
+          value: "-Xms64m -Xmx128m"
+        readinessProbe:
+          httpGet:
+            path: /management/health
+            port: 7979
+          initialDelaySeconds: 20
+          timeoutSeconds: 5
+          periodSeconds: 20
